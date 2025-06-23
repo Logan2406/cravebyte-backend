@@ -8,7 +8,7 @@ import lombok.Data;
 import java.util.UUID;
 
 @Entity
-@Table(name="DeliveryEarning")
+@Table(name="DeliveryEarnings")
 @Data
 @AllArgsConstructor
 public class DeliveryEarning {
