@@ -1,11 +1,11 @@
 package com.cravebyte.cravebyte_backend.entities;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
 import java.time.LocalDateTime;
-import java.util.UUID;
+
 
 @Data
 @AllArgsConstructor
@@ -14,8 +14,7 @@ import java.util.UUID;
 public class FoodItem {
 
     @Id
-    @GeneratedValue
-    private UUID foodId;
+    private String foodId;
 
     private String foodName;
 
@@ -31,6 +30,13 @@ public class FoodItem {
 
     private boolean isAvailable;
 
-    //category and cuisine
+    @ManyToOne
+    private FoodCategory category;
+
+    @ManyToOne
+    private Cuisine cuisine;
+
+    @ManyToOne
+    private Restaurant restaurant;
 
 }

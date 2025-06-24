@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -39,6 +40,6 @@ public class Order {
     @ManyToOne
     private Restaurant restaurant;
 
-    @ManyToMany
-    List<FoodItem> foods;
+    @OneToMany(mappedBy = "order")
+    private Set<FoodOrder> foodOrder;
 }

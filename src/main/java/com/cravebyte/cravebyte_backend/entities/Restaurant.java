@@ -47,7 +47,7 @@ public class Restaurant {
     @OneToMany
     private List<FoodUser> staffs;
 
-    @OneToMany
+    @OneToMany(mappedBy = "restaurant")
     private List<FoodItem> food;
 
 }

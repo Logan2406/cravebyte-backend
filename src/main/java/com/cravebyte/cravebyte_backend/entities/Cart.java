@@ -7,6 +7,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -24,7 +25,7 @@ public class Cart {
     @OneToOne
     private FoodUser user;
 
-    @ManyToMany
-    List<FoodItem> foods;
+    @OneToMany(mappedBy = "cart")
+    Set<FoodCart> foodCarts;
 
 }

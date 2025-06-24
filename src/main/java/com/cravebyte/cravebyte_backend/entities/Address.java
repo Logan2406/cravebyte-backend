@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
 
@@ -16,7 +17,7 @@ import java.util.UUID;
 public class Address {
 
     @Id
-    @GeneratedValue
+    @UuidGenerator
     private UUID addressId;
 
     private String addressLineOne;
